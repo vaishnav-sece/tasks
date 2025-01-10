@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .caption {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; margin-top: 20px;">Photo Gallery</h1>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="download (1).jpeg" alt="Photo 1">
+            <div class="caption">Photo 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="thunder.jpg" alt="Photo 2">
+            <div class="caption">Photo 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="photo.webp" alt="Photo 3">
+            <div class="caption">Photo 3</div>
+        </div>
+        <div class="gallery-item">
+            <img src="OIP.jpg" alt="Photo 4">
+            <div class="caption">Photo 4</div>
+        </div>
+        <div class="gallery-item">
+            <img src="download (1).jpeg" alt="Photo 5">
+            <div class="caption">Photo 5</div>
+        </div>
+        <div class="gallery-item">
+            <img src="thunder.jpg" alt="Photo 6">
+            <div class="caption">Photo 6</div>
+        </div>
+        <div class="gallery-item">
+            <img src="photo.webp" alt="Photo 7">
+            <div class="caption">Photo 7</div>
+        </div>
+        <div class="gallery-item">
+            <img src="OIP.jpg" alt="Photo 8">
+            <div class="caption">Photo 8</div>
+        </div>
+        <div class="gallery-item">
+            <img src="download (1).jpeg" alt="Photo 9">
+            <div class="caption">Photo 9</div>
+        </div>
+        <div class="gallery-item">
+            <img src="thunder.jpg" alt="Photo 10">
+            <div class="caption">Photo 10</div>
+        </div>
+    </div>
+
+</body>
+</html>

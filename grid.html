@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer";
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 200px 1fr;
+      gap: 10px; /* Add gap between rows and columns */
+      height: 100vh;
+      padding: 10px; /* Optional padding around the container */
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .nav {
+      grid-area: nav;
+      background-color: #fa0606;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #d91584;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .footer {
+      grid-area: footer;
+      background-color: #7717d7;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav ul li {
+      margin: 0.5rem 0;
+    }
+
+    .nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero quod quas eveniet quidem quaerat, porro beatae dicta, ea magni atque illum doloribus distinctio! Consequatur eos exercitationem vitae cumque quis nisi.</h1>
+    </header>
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nam vel necessitatibus rerum beatae minima saepe eveniet, nobis incidunt itaque. Autem assumenda dignissimos odio sed, necessitatibus ipsam veniam odit dolor?
+        Pariatur neque libero fugiat? Exercitationem unde quam, voluptatum, distinctio rerum eius consectetur dolor nihil nemo enim laudantium nisi aliquid omnis ipsa corporis provident rem fugiat doloremque numquam veritatis accusantium minima!
+        Ea explicabo nemo impedit voluptates. Dicta minus hic nulla animi quia dolor doloremque totam reprehenderit, a modi perferendis ab praesentium. Suscipit, dolores molestias! Molestias mollitia ut dolor eveniet! Suscipit, quisquam.</a></li>
+      </ul>
+    </nav>
+    <main class="main">
+      <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quibusdam, officia autem soluta vero architecto dolores! Tempora laudantium consequuntur, voluptas velit, consequatur rem cum, nemo aperiam eligendi ipsa distinctio. Expedita!
+      Cumque voluptatum eos maiores similique illum culpa corrupti minima odit nisi commodi minus fugit corporis eum officia dignissimos vitae, quaerat omnis perspiciatis magni inventore itaque! Minus quibusdam veniam tenetur numquam.
+      Cupiditate reiciendis sequi mollitia voluptatum ea nesciunt voluptates vel, minus sit facilis provident, beatae, suscipit hic. Asperiores maxime excepturi ab perspiciatis fugiat, iusto inventore quae omnis id eligendi in cupiditate?
+      Natus non dolores in provident expedita placeat quaerat quod velit nulla, aperiam vel hic maxime culpa atque aliquam ut quam alias minus. Assumenda laudantium aliquid tempore numquam doloribus inventore ullam?
+      Necessitatibus velit aliquam atque dicta vitae dolorum nobis, dolor libero, at minus aliquid beatae vero culpa maxime fugiat! Et veritatis ad itaque quas ea deserunt debitis tempore minus amet ipsam.
+      Numquam corporis voluptates suscipit ullam qui a, fuga maiores enim hic officiis quisquam eveniet quidem similique ratione tempore, vitae placeat voluptatibus quis, voluptas consequatur quibusdam ducimus nesciunt. Adipisci, quae animi.
+      Enim adipisci minima cupiditate facilis voluptatum voluptatibus assumenda, consectetur distinctio a libero aut ipsum explicabo earum aperiam veritatis totam at labore. Atque corporis excepturi, inventore ex iste maiores voluptas eaque!
+      Cum saepe libero vero commodi cupiditate sapiente delectus deleniti blanditiis, reprehenderit accusantium numquam voluptatibus enim, quis quia consequuntur nobis non, tempore suscipit nesciunt recusandae nisi voluptates explicabo laboriosam. Adipisci, non!
+      Adipisci sunt odit, consequuntur architecto nostrum culpa laboriosam magni inventore laudantium at expedita quod quia quis ducimus error totam illum. Unde, a repellendus consequuntur obcaecati libero velit. Accusantium, ipsum nulla.
+      Ex nam nihil a nostrum nesciunt velit sint aperiam eius saepe autem illo, odio, quo vitae harum delectus nisi culpa id fuga iure mollitia dolorum voluptates ullam quae. Praesentium, nesciunt.</h2>
+    </main>
+    <footer class="footer">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ut quos excepturi ipsum dolores eveniet voluptates maiores itaque unde ullam quisquam ipsa ratione reprehenderit quas, doloremque eaque quod, aliquid porro!
+      Veritatis ad officia dignissimos suscipit sit, odio eveniet quas necessitatibus culpa ipsum asperiores id cumque aspernatur consectetur molestiae quaerat numquam quis dolor laborum dolores placeat deleniti quasi soluta? Magni, at?
+      Aperiam assumenda alias voluptate corrupti iusto, sint ipsum debitis facilis in adipisci minus accusamus quia ducimus laborum vero excepturi aut sed culpa perspiciatis esse commodi quaerat accusantium non voluptatibus? Enim?
+      Cupiditate totam quibusdam, molestias distinctio, debitis omnis consequatur, alias esse magni est consectetur nostrum soluta error doloremque at reiciendis nobis explicabo quae repellendus atque? Repellendus quo eaque impedit magni aliquam.
+      Consequuntur ipsam ratione laborum, debitis atque accusamus inventore quis dolorum! Blanditiis modi nihil ipsa pariatur odit aut totam possimus expedita sequi quam, magni corrupti illum vel minus, eligendi placeat laborum!</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f4f4f9, #e4e9f2);
+            color: #333;
+            font-size: 18px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to right, #4a4e69, #9a8c98);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #4a4e69;
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        form input, form textarea, form select {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        form input[type="submit"], form button {
+            background: #4a4e69;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+            width: auto;
+        }
+
+        form input[type="submit"]:hover, form button:hover {
+            background: #6d6875;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #4a4e69, #9a8c98);
+            color: white;
+            position: relative;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <section>
+        <h2>Job Application</h2>
+        <form action="submit_job_application.php" method="POST" enctype="multipart/form-data" id="jobApplicationForm">
+
+            <!-- Step 1: Personal Details -->
+            <div class="form-section active" id="step1">
+                <h3>Step 1: Personal Details</h3>
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <div>
+                    <button type="button" onclick="nextStep(1)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Job Details -->
+            <div class="form-section" id="step2">
+                <h3>Step 2: Job Details</h3>
+                <div>
+                    <label for="post">Post Applied:</label>
+                    <select id="post" name="post" required>
+                        <option value="Full-Stack Java Developer">Full-Stack Java Developer</option>
+                        <option value="Backend Developer">Backend Developer</option>
+                        <option value="Frontend Developer">Frontend Developer</option>
+                        <option value="Software Engineer">Software Engineer</option>
+                        <option value="Junior Developer">Junior Developer</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="experience">Years of Experience:</label>
+                    <input type="number" id="experience" name="experience" min="0" required>
+                </div>
+
+                <div>
+                    <label for="skills">Skills (comma separated):</label>
+                    <input type="text" id="skills" name="skills" required>
+                </div>
+
+                <div>
+                    <label for="resume">Upload Resume:</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <div>
+                    <button type="button" onclick="previousStep(2)">Back</button>
+                    <button type="button" onclick="nextStep(2)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Cover Letter -->
+            <div class="form-section" id="step3">
+                <h3>Step 3: Cover Letter</h3>
+                <div>
+                    <label for="message">Cover Letter:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <div>
+                    <button type="button" onclick="previousStep(3)">Back</button>
+                    <input type="submit" value="Submit Application">
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+
+    <script>
+        function nextStep(step) {
+            const currentStep = document.getElementById('step' + step);
+            const nextStep = document.getElementById('step' + (step + 1));
+
+            currentStep.classList.remove('active');
+            nextStep.classList.add('active');
+        }
+
+        function previousStep(step) {
+            const currentStep = document.getElementById('step' + step);
+            const prevStep = document.getElementById('step' + (step - 1));
+
+            currentStep.classList.remove('active');
+            prevStep.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
